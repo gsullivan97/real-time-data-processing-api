@@ -34,6 +34,14 @@ The application is structured as follows:
 - **services**: Contains the service layer for data processing.
 - **main.py**: The entry point of the application.
 
+## API Endpoints
+
+- **POST /data/insert-new-data**: Ingest and process new data based on post body.
+- **POST /data/processing**: Process the existing data.
+- **GET /data/latest**: Retrieve the latest data point.
+- **GET /data**: Query data with optional start and end timestamps.
+- **POST /start-data-load**: Trigger data generation and auto load.
+
 ## Assumptions and Limitations
 
 - The application assumes that the data source is reliable and provides data in the expected format.
