@@ -8,10 +8,14 @@ import asyncio
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-  asyncio.create_task(generate_data())
+  # asyncio.create_task(generate_data())
 
   yield
   print("Shutting down the application...")
 
 app = FastAPI(lifespan=lifespan)
 app.include_router(data_router)
+
+@app.get("/")
+async def root():
+  return {"message": "Welcome to the Real-Time Data Processing API"}

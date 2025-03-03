@@ -2,8 +2,13 @@ import asyncio
 from fastapi.responses import JSONResponse
 from src.app.models import DataPoint
 from src.services.data_processing import transform_data, analyze_data
+from src.app.data_generator import generate_data
 
 data_collection = []
+
+async def start_data_generation():
+  """Start generating data in the background."""
+  await generate_data(data_collection)
 
 async def ingest_data(data: DataPoint):
   data_collection.append(data)
