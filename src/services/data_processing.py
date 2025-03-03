@@ -3,6 +3,7 @@ from typing import List
 from src.app.models import DataPoint
 
 def transform_data(data: List[DataPoint]) -> pd.DataFrame:
+  """Transforms a list of DataPoint objects into a melted pandas DataFrame."""
   df = pd.DataFrame([data_point.model_dump() for data_point in data])
 
   #2. Data Processing: Example of transformation - Melt the DataFrame
@@ -11,6 +12,7 @@ def transform_data(data: List[DataPoint]) -> pd.DataFrame:
   return melted_df
 
 def analyze_data(df: pd.DataFrame) -> pd.DataFrame:
+  """Analyzes a pandas DataFrame by filtering and computing a moving average."""
   #2. Data Processing: Filter for the 'value_transformed' rows
   value_df = df[df['variable'] == 'value']
 
