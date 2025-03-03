@@ -1,4 +1,5 @@
 import asyncio
+import json
 from fastapi.responses import JSONResponse
 from src.app.models import DataPoint
 from src.services.data_processing import transform_data, analyze_data
@@ -22,5 +23,9 @@ async def process_data():
     analyzed_df.index = analyzed_df.index.astype(str)
     analyzed_df.fillna('NaN', inplace=True)
     json_data = analyzed_df.reset_index().to_dict(orient='records')
+
+    # INFO: Save the processed data to a JSON file
+    with open('test.json', 'w') as json_file:
+      json.dump(json_data, json_file, indent=2)
 
     return json_data
