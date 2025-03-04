@@ -18,8 +18,9 @@ async def process_data_endpoint():
 
 @router.get("/data/latest")
 async def get_latest_data():
+  """Endpoint to return the latest data point."""
   if data_collection:
-    return data_collection[-1]  # Return the latest data point
+    return data_collection[-1]
   else:
     raise HTTPException(status_code=404, detail="No data available")
 
@@ -31,6 +32,10 @@ async def query_data(start: str = None, end: str = None):
 
 @router.post("/start-data-load")
 async def start_data_load(background_tasks: BackgroundTasks):
-    """Endpoint to trigger data generation."""
-    background_tasks.add_task(start_data_generation)
-    return {"message": "Data generation has started."}
+  """Endpoint to trigger data generation."""
+  background_tasks.add_task(start_data_generation)
+  return {"message": "Data generation has started."}
+
+@router.get("/")
+async def root():
+  return {"message": "Welcome to the Real-Time Data Processing API"}

@@ -2,9 +2,8 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from src.routers.data_router import router as data_router
-from src.app.data_generator import generate_data
 
-import asyncio
+# import asyncio
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -15,7 +14,3 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 app.include_router(data_router)
-
-@app.get("/")
-async def root():
-  return {"message": "Welcome to the Real-Time Data Processing API"}

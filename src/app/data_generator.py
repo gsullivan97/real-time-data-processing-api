@@ -1,7 +1,6 @@
 # Script for simulating real-time data generation
 import asyncio
 import random
-import json
 from datetime import datetime
 from src.app.models import DataPoint
 

@@ -1,6 +1,4 @@
-import asyncio
 import json
-from fastapi.responses import JSONResponse
 from src.app.models import DataPoint
 from src.services.data_processing import transform_data, analyze_data
 from src.app.data_generator import generate_data
