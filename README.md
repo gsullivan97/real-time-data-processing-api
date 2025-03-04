@@ -49,33 +49,23 @@ The application is structured as follows:
 - The current implementation does not include authentication or authorization mechanisms.
 
 ## Architecture
-├── .gitignore
-├── .virtualenvs/
-│   └── data-processing-api/
-│       ├── bin/
-│       ├── include/
-│       ├── lib/
-│       ├── lib64
-│       └── pyvenv.cfg
-├── .vscode/
-│   ├── launch.json
-│   └── settings.json
-├── Makefile
-├── README.md
-├── requirements.txt
-├── setup.py
-└── src/
-  ├── __init__.py
-  ├── __pycache__/
-  ├── app/
-  │   ├── __init__.py
-  │   ├── data_generator.py
-  │   ├── data_pipeline.py
-  │   └── models.py
-  ├── main.py
-  ├── routers/
-  │   ├── __init__.py
-  │   └── data_router.py
-  └── services/
-    ├── __init__.py
-    └── data_processing.py
+    ├── .gitignore
+    ├── Makefile
+    ├── README.md
+    ├── requirements.txt
+    ├── setup.py
+    └── src/
+      ├── __init__.py
+      ├── __pycache__/
+      ├── app/
+      │   ├── __init__.py
+      │   ├── data_generator.py
+      │   ├── data_pipeline.py
+      │   └── models.py
+      ├── main.py
+      ├── routers/
+      │   ├── __init__.py
+      │   └── data_router.py
+      └── services/
+        ├── __init__.py
+        └── data_processing.py
